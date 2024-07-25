@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Tes push 
+Route::get('/tes', function () {
+    return view('tes');
+});
