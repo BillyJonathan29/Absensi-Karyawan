@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "SF-PRO";
+    src: url("/fonts/sfpro/SFPRODISPLAYREGULAR.OTF") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF-PRO";
+    src: url("/fonts/sfpro/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF-PRO";
+    src: url("/fonts/sfpro/SFPRODISPLAYBOLD.OTF") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --font-regular: "SF-PRO", sans-serif;
+    --font-medium: "SF-PRO", sans-serif;
+    --font-bold: "SF-PRO", sans-serif;
+    --dark: #1b262c;
+    --primary: #3282b8;
+}
+
+body {
+    font-family: var(--font-regular);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.font-medium {
+    font-family: var(--font-medium);
+    font-weight: 500;
+}
+
+.font-bold {
+    font-family: var(--font-bold);
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: white;
+    background-color: var(--primary);
+}

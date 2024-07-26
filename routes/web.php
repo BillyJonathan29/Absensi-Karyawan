@@ -16,7 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Tes push 
-Route::get('/tes', function () {
-    return view('tes');
+
+Route::get('/masuk', function () {
+    return view('auth/signin');
+});
+Route::get('/daftar', function () {
+    return view('auth/signup');
+});
+Route::get('/kirim-otp', function () {
+    return view('auth/forget-password');
+});
+Route::get('/verifikasi-otp', function () {
+    return view('auth/one-time-password');
+});
+
+Route::get('/katasandi-baru', function () {
+    return view('auth/new-password');
 });
