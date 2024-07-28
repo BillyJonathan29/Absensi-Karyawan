@@ -9,15 +9,16 @@
         <span>Silahkan masuk terlebih dahulu.</span>
     </div>
     <div class="w-50 bg-primary h-25"></div>
-    <form>
+    <form class="sign-in-form" id="formLogin" method="POST">
+        @csrf
         <div class="mb-2">
             <label for="InputUsername" class="form-label">Nama pengguna</label>
-            <input type="text" class="form-control" id="InputUsername">
+            <input type="text" class="form-control" name="name" id="InputUsername">
         </div>
         <div class="mb-3">
             <label for="InputPassword" class="form-label">Kata sandi</label>
             <div class="input-group">
-                <input type="password" class="form-control" id="InputPassword">
+                <input type="password" name="password" class="form-control" id="InputPassword">
                 <span class="input-group-text" id="passwordToggle" onclick="togglePassword()" style="display: none;">
                     <i class="fa-solid fa-eye"></i>
                 </span>
@@ -31,7 +32,7 @@
         <button type="submit" class="btn btn-primary w-100">Masuk</button>
         <div class="mt-1 mb-3 existing-account-info d-flex justify-content-center">
             <span class="mr-1">Belum punya akun?</span>
-        <a href="/daftar">Buat akun sekarang</a>
+        <a href="auth/signup">Buat akun sekarang</a>
     </form>
 </div>
 @endsection

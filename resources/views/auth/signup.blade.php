@@ -10,6 +10,7 @@
     </div>
     <div class="w-50 bg-primary h-25"></div>
     <form>
+        @csrf
         <div class="mb-2 input-field">
             <label for="InputUsername" class="form-label">Nama pengguna</label>
             <input type="text" class="form-control" id="InputUsername">

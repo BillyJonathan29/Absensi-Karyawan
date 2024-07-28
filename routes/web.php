@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/masuk', function () {
-    return view('auth/signin');
-});
-Route::get('/daftar', function () {
-    return view('auth/signup');
-});
+
 Route::get('/kirim-otp', function () {
     return view('auth/forget-password');
 });
@@ -32,4 +29,22 @@ Route::get('/verifikasi-otp', function () {
 
 Route::get('/katasandi-baru', function () {
     return view('auth/new-password');
+});
+
+Route::get('/menu', function () {
+    return view('layouts.menu');
+});
+
+
+// Route::get('/masuk', function () {
+//     return view('auth/signin');
+// });
+
+// Route::get('/signup', function (){
+//     return view('auth/signup');
+// });
+
+Route::prefix('auth')->group(function(){
+    Route::get('/signin', [UserController::class, 'signin'])->name('signin');
+    Route::post('/signin', [UserController::class, 'authenticate'])->name('process.signin');
 });
