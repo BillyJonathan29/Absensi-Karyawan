@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
+
 
 
 /*
@@ -44,7 +46,29 @@ Route::get('/menu', function () {
 //     return view('auth/signup');
 // });
 
-Route::prefix('auth')->group(function(){
-    Route::get('/signin', [UserController::class, 'signin'])->name('signin');
-    Route::post('/signin', [UserController::class, 'authenticate'])->name('process.signin');
+Route::middleware(['guest'])->group(function () {
+    Route::prefix('auth')->group(function(){
+        Route::get('/signin', [UserController::class, 'signin'])->name('signin');
+        Route::post('/signin', [UserController::class, 'authenticate'])->name('process.signin');
+    });
 });
+
+
+Route::middleware(['auth', 'role:Owner'])->group(function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/pegawai/jam-kerja', [DashboardController::class, 'index'])->name('dashboard');
+    });
+});
+
+Route::middleware(['auth', 'role:Staff'])->group(function () {
+    Route::prefix('homepage')->group(function () {
+        Route::get('/', function () {
+            return view('homepage.index');
+        })->name('homepage');
+    });
+});
+
+
+Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
+

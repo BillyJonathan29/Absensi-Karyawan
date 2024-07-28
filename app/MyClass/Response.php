@@ -5,15 +5,13 @@ namespace App\MyClass;
 class Response
 {
 
-	public static function error($e)
-	{
-		// self::sendError($e);
-
-		return response()->json([
-			'message'	=> "{$e->getFile()} : {$e->getLine()} {$e->getMessage()}",
-			'trace'		=> $e->getTraceAsString()
-		], 500);
-	}
+	public static function error($message, $code = 500)
+    {
+        return response()->json([
+            'message' => $message,
+            'code' => $code,
+        ], $code);
+    }
 
 
 	public static function success($array = [])

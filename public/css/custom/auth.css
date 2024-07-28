@@ -21,6 +21,8 @@ body {
     background-color: #272727;
     color: whitesmoke;
     box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    outline: none;
+    border: none;
 }
 
 .card input:hover {
@@ -95,4 +97,14 @@ body {
     border-color: #3282b8;
     background-color: #272727;
     color: #fff;
+}
+
+input .is-invalid {
+    color: red;
+    border: red;
+}
+
+.invalid-message {
+    color: rgb(255, 72, 72);
+    font-size: small;
 }
