@@ -1,64 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://acursio.store" target="_blank"><img src="public/img/acursio-logo.webp" width="150"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://laravel.com/"><img src="https://i.ibb.co.com/N7xwZdL/lara.webp" width="100" alt="Laravel Framewrok"></a>
+<a href="https://www.mysql.com/"><img src="https://i.ibb.co.com/prwmRQk/mysql.webp" alt="mysql" width="100"></a>
+<a href="https://jquery.com/"><img src="https://i.ibb.co.com/0hm50t0/jquery.webp" alt="jquery"  width="100"></a>
+<a href="https://getbootstrap.com/"><img src="https://i.ibb.co.com/NtphXq9/boots.webp" alt="bootstrap" width="100"></a>
+<a href="https://fontawesome.com/"><img src="https://i.ibb.co.com/0ntr9QQ/fa.webp"  width="100" alt="Font Aweosome"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Pengantar
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Proyek ini dirancang untuk membantu organisasi dalam mengelola absensi karyawan dengan efisien dan efektif. Aplikasi ini menawarkan solusi yang komprehensif untuk pengelolaan data karyawan, dan laporan absensi. Dengan antarmuka pengguna yang intuitif dan fitur yang fleksibel, aplikasi ini dirancang untuk memenuhi kebutuhan organisasi dari berbagai ukuran.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi Absensi Karyawan menggunakan teknologi modern untuk memastikan performa yang optimal dan kemudahan penggunaan. Fitur utama dari aplikasi ini termasuk kemampuan untuk mencatat kehadiran secara real-time, menghasilkan laporan kehadiran yang terperinci, dan menyediakan alat administrasi yang memudahkan manajer dalam mengelola data karyawan. Aplikasi ini juga mendukung akses melalui perangkat seluler dan desktop, memastikan bahwa karyawan dan administrator dapat mengakses informasi absensi kapan saja dan di mana saja.
 
-## Learning Laravel
+## Daftar Isi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- [Pengantar](#pengantar)
+- [Tech Stack](#tech-stack)
+- [Fitur Utama](#fitur-utama)
+- [Lisensi](#lisensi)
+- [Kontributor](#kontributor)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Aplikasi ini dibangun menggunakan teknologi berikut:
 
-### Premium Partners
+- [Laravel 9](https://laravel.com/) : Framework PHP yang kuat dan fleksibel, digunakan untuk membangun aplikasi web dengan arsitektur yang bersih dan terstruktur.
+- [Bootstrap](https://getbootstrap.com/) : Framework CSS yang menyediakan komponen antarmuka pengguna yang responsif dan siap pakai, memastikan tampilan yang konsisten di berbagai perangkat.
+- [JQuery](https://jquery.com/) : Library JavaScript yang mempermudah manipulasi DOM, penanganan acara, dan interaksi AJAX.
+- [My SQL Database](https://mysql.com/) : Sistem manajemen basis data yang digunakan untuk menyimpan dan mengelola data absensi dan informasi karyawan.
+- [Font Awesome](https://fontawesome.com/) : Paket ikon yang memudahkan penambahan ikon yang menarik dan fungsional ke antarmuka pengguna.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Fitur Utama
 
-## Contributing
+Aplikasi Absensi Karyawan hadir dengan berbagai fitur yang dirancang untuk memenuhi kebutuhan administrasi absensi, antara lain:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Pencatatan Kehadiran Real-Time: Karyawan dapat mencatat kehadiran mereka secara langsung melalui antarmuka pengguna yang sederhana dan responsif.
+- Pengelolaan Data Karyawan: Admin dapat menambah, mengedit, atau menghapus data karyawan dengan mudah.
+- Laporan Absensi: Aplikasi ini menyediakan laporan yang komprehensif tentang absensi karyawan.
+- Pengaturan Jadwal Kerja: Memungkinkan admin untuk mengatur jadwal kerja dan shift karyawan secara fleksibel.
+  
 
-## Code of Conduct
+## Lisensi
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Aplikasi ini dilisensikan di bawah [MIT license](https://opensource.org/licenses/MIT). Lisensi ini memungkinkan Anda untuk menggunakan, menyalin, memodifikasi, dan mendistribusikan perangkat lunak ini dengan syarat-syarat tertentu.
 
-## Security Vulnerabilities
+## Kontributor
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Terima kasih kepada semua kontributor yang telah membantu proyek ini!
+<table>
+  <tbody>
+    <tr>
+        <td align="center>
+             <a href="github.com/billyJonathan29">
+          <img src="https://avatars.githubusercontent.com/u/152674659?v=4" width="100px;" alt="Billy Jonathan" style="border-radius: 100%"/>
+          <br />
+          <sub><b>BillyJonathan29</b></sub>
+        </a>
+        </td>
+      <td align="center">
+        <a href="https://github.com/Kiisanz">
+          <img src="https://avatars.githubusercontent.com/u/88512415?v=4" width="100px;" alt="Kiisanz" style="border-radius: 100%"/>
+          <br/>
+          <sub><b>Kiisanz</b></sub>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

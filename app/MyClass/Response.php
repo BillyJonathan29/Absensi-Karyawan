@@ -4,23 +4,13 @@ namespace App\MyClass;
 use Exception;
 class Response
 {
-
-	public static function error($e)
-	{
-		if ($e instanceof Exception) {
-			return response()->json([
-				'message' => "{$e->getFile()} : {$e->getLine()} {$e->getMessage()}",
-				'trace' => $e->getTraceAsString()
-			], 500);
-		} else {
-			return response()->json([
-				'message' => 'An error occurred, but the provided error is not an instance of Exception.',
-				'error' => $e
-			], 500);
-		}
-	}
-	
-
+	public static function error($message, $code = 500)
+    {
+        return response()->json([
+            'message' => $message,
+            'code' => $code,
+        ], $code);
+    }
 
 	public static function success($array = [])
 	{
