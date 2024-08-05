@@ -1,4 +1,4 @@
-<nav id="sidebar" class="sidebar container-fluid">
+<nav id="sidebar" class="sidebar col-md-3 col-lg-2S">
     <div class="sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">

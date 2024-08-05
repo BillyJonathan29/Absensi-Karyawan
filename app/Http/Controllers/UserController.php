@@ -59,6 +59,24 @@ class UserController extends Controller
       return redirect()->route('signin');
   }
 
+  public function getAbsenData()
+    {
+        $data = [
+            'categories' => ['2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04', '2024-07-05'],
+            'series' => [
+                [
+                    'name' => 'Masuk',
+                    'data' => [20, 22, 18, 25, 24]
+                ],
+                [
+                    'name' => 'Tidak Hadir',
+                    'data' => [5, 3, 7, 2, 4]
+                ]
+            ]
+        ];
+        return response()->json($data);
+    }
+
 
 //     Validations::loginValidate($request);
 

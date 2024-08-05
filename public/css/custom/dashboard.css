@@ -1,21 +1,36 @@
-.dashboard-wrapper {
+dashboard-wrapper {
     display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .dashboard-header {
-    width: 100%;
-    z-index: 9999;
+    padding-left: 16rem;
+    z-index: 10;
+    padding-right: 32px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-
-#sidebar {
-    padding: 0;
-    margin: 0;
+.sidebar {
     width: 16rem;
+    background-color: rgb(44, 44, 46);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.brand-container {
+    position: sticky;
+    top: 0;
     background-color: rgb(44, 44, 46);
-    min-height: 100vh;
+    z-index: 1000;
 }
 
 .brand-container h5 {
@@ -35,8 +50,9 @@ ul {
 
 .nav-link {
     color: #8a8a8a;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -45,7 +61,7 @@ ul {
 
 .nav-link.active {
     color: white;
-    background-color: #206bd33d; 
+    background-color: #206bd33d;
 }
 
 .arrow-icon {
@@ -61,7 +77,7 @@ ul {
 }
 
 .children-menu .nav-item::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 5px;
     top: 0;
@@ -85,13 +101,14 @@ ul {
     background-color: #206bd33d;
 }
 
-.breadcrumb{
+.breadcrumb {
     background-color: transparent;
-    color: gray;
+    color: rgb(214, 214, 214);
+    margin: 0;
 }
 
 .breadcrumb .breadcrumb-item:first-child a {
-    color: rgb(201, 201, 201);
+    color: rgb(184, 184, 184);
     font-weight: bold;
 }
 
@@ -101,4 +118,88 @@ ul {
 
 .breadcrumb .breadcrumb-item.active span {
     color: rgb(175, 175, 175);
+}
+
+.dashboard-row {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+.dashboard-content {
+    margin-left: 16rem;
+    padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    height: 100vh;
+    color: #fff;
+}
+
+.dashboard-main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.dashboard-secondary-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #2c2c2e;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    border: none;
+    color: rgb(209, 209, 209);
+}
+
+.card-body {
+    padding: 20px;
+    border: none;
+}
+
+.card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.charts-section .card {
+    margin-bottom: 12px;
+}
+
+.dashboard-overview .card {
+    margin-bottom: 12px;
+}
+
+.transaction .card {
+    margin-bottom: 12px;
+}
+
+.table-section {
+    margin-top: 12px;
+}
+
+.text-grey {
+    color: #adadad;
+}
+
+.indicator-danger {
+    border-radius: 30px;
+    font-size: small;
+    background-color: #cf3d3d42;
+    color: #b89393;
+}
+
+.indicator-safe {
+    border-radius: 30px;
+    font-size: small;
+    background-color: #3dcf6942;
+    color: #94b893;
 }
