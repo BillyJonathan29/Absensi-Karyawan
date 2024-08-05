@@ -9,13 +9,6 @@
                                         <a class="nav-link" href="#">Hello, {{ $authUser->name }}</a>
                                 </li>
                                 <li class="nav-item">
-                                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                                                @csrf
-                                                <button type="submit" class="nav-link btn btn-link"
-                                                        style="display: inline; padding: 0; margin: 0; border: none; background: none; cursor: pointer;">
-                                                        Logout
-                                                </button>
-                                        </form>
                                 </li>
                                 @endif
                         </ul>

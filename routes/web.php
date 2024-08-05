@@ -57,7 +57,7 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth', 'role:Owner'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/pegawai/jam-kerja', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/pegawai/jam-kerja', [DashboardController::class, 'index']);
     });
 });
 
@@ -71,4 +71,7 @@ Route::middleware(['auth', 'role:Staff'])->group(function () {
 
 
 Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
+
+Route::get('/api/absen-data', [UserController::class, 'getAbsenData']);
+
 

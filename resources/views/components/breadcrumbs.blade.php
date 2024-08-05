@@ -1,14 +1,14 @@
-<!-- resources/views/components/breadcrumbs.blade.php -->
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-                @foreach ($breadcrumbs as $breadcrumb)
-                <li class="breadcrumb-item">
-                        @if (!$loop->last)
+            @foreach ($breadcrumbs as $breadcrumb)
+                <li class="breadcrumb-item @if ($loop->last) active @endif">
+                    @if ($loop->last)
+                        {{ $breadcrumb['name'] }}
+                    @else
                         <a href="{{ $breadcrumb['url'] }}">{{ $breadcrumb['name'] }}</a>
-                        @else
-                        <span>{{ $breadcrumb['name'] }}</span>
-                        @endif
+                    @endif
                 </li>
-                @endforeach
+            @endforeach
         </ol>
-</nav>
+    </nav>
+    

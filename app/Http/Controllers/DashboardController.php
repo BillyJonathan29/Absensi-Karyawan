@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $sidebarItems = [
             ['name' => 'Dashboard', 'link' => '/dashboard', 'icon' => 'fa-home'],
@@ -35,6 +35,36 @@ class DashboardController extends Controller
             ['name' => 'Pengaturan', 'link' => '/pengaturan', 'icon' => 'fa-cog'],
         ];
 
-        return view('dashboard.index', compact('sidebarItems'))->with('title', 'Dashboard');
+        $path = $request->path();
+        $segments = explode('/', $path);
+        $breadcrumbs = [];
+
+        // Breadcrumb untuk root dashboard
+        $breadcrumbs[] = [
+            'name' => 'Dashboard',
+            'url' => url('/dashboard')
+        ];
+
+        // Breadcrumb untuk segmentasi setelah dashboard
+        foreach (array_slice($segments, 1) as $key => $segment) {
+            $url = '/dashboard/' . implode('/', array_slice($segments, 1, $key + 1));
+            $breadcrumbs[] = [
+                'name' => ucfirst($segment),
+                'url' => url($url)
+            ];
+        }
+
+        if ($request->ajax()) {
+            return response()->json([
+                'breadcrumbs' => $breadcrumbs,
+                'sidebarItems' => $sidebarItems
+            ]);
+        }
+
+        return view('dashboard.index', [
+            'sidebarItems' => $sidebarItems,
+            'breadcrumbs' => $breadcrumbs
+        ])->with('title', 'Dashboard');
     }
 }
+
