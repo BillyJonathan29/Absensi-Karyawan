@@ -1,10 +1,9 @@
 <?php 
 
 namespace App\MyClass;
-
+use Exception;
 class Response
 {
-
 	public static function error($message, $code = 500)
     {
         return response()->json([
@@ -12,7 +11,6 @@ class Response
             'code' => $code,
         ], $code);
     }
-
 
 	public static function success($array = [])
 	{
