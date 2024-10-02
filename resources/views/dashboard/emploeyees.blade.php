@@ -4,12 +4,12 @@
 @section('content')
 <div class="dashboard-content">
     <div class="container-xl">
-
                 <section class="table-section">
+                    <div class="card-header d-flex justify-content-between">
+                        <h2 class="card-title">Data Pegawai</h2>
+                        <button class="btn btn-primary"><i class="fa-solid fa-plus mr-1"></i> Tambah Pegawai</button>
+                    </div>
                     <div class="card">
-                        <div class="card-header">
-                            <h6 class="card-title">Riwayat Transaksi</h6>
-                        </div>
                         <div class="card-body">
                             <table class="table table-striped">
                                 <thead>
@@ -45,7 +45,6 @@
                         </div>
                     </div>
                 </section>
-
     </div>
 </div>
 

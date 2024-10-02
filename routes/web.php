@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
-
-
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,8 +56,9 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth', 'role:Owner'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/pegawai/jam-kerja', [DashboardController::class, 'index']);
-    });
+        Route::get('/pegawai/jam-kerja', [DashboardController::class, 'shift'])->name('pegawai.shift');
+        Route::get('/pegawai', [DashboardController::class, 'employeesList'])->name('pegawai.index');
+    });    
 });
 
 Route::middleware(['auth', 'role:Staff'])->group(function () {

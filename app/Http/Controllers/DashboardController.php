@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index(Request $request)
+    protected function getSidebarItems()
     {
-        $sidebarItems = [
+        return [
             ['name' => 'Dashboard', 'link' => '/dashboard', 'icon' => 'fa-home'],
             [
                 'name' => 'Pegawai', 'link' => '/pegawai', 'icon' => 'fa-users',
                 'children' => [
-                    ['name' => 'Data Pegawai', 'link' => '/pegawai/data', 'icon' => 'fa-user'],
+                    ['name' => 'Data Pegawai', 'link' => '/dashboard/pegawai/', 'icon' => 'fa-user'],
                     ['name' => 'Jabatan', 'link' => '/pegawai/jabatan', 'icon' => 'fa-briefcase'],
                     ['name' => 'Shift', 'link' => '/dashboard/pegawai/jam-kerja', 'icon' => 'fa-clock'],
                     ['name' => 'Absensi', 'link' => '/pegawai/absensi', 'icon' => 'fa-calendar-check'],
@@ -34,7 +34,10 @@ class DashboardController extends Controller
             ],
             ['name' => 'Pengaturan', 'link' => '/pengaturan', 'icon' => 'fa-cog'],
         ];
+    }
 
+    protected function getBreadcrumbs(Request $request)
+    {
         $path = $request->path();
         $segments = explode('/', $path);
         $breadcrumbs = [];
@@ -54,17 +57,39 @@ class DashboardController extends Controller
             ];
         }
 
-        if ($request->ajax()) {
-            return response()->json([
-                'breadcrumbs' => $breadcrumbs,
-                'sidebarItems' => $sidebarItems
-            ]);
-        }
+        return $breadcrumbs;
+    }
+
+    public function index(Request $request)
+    {
+        $sidebarItems = $this->getSidebarItems();
+        $breadcrumbs = $this->getBreadcrumbs($request);
 
         return view('dashboard.index', [
             'sidebarItems' => $sidebarItems,
             'breadcrumbs' => $breadcrumbs
         ])->with('title', 'Dashboard');
     }
-}
 
+    public function shift(Request $request)
+    {
+        $sidebarItems = $this->getSidebarItems();
+        $breadcrumbs = $this->getBreadcrumbs($request);
+
+        return view('dashboard.shift', [
+            'sidebarItems' => $sidebarItems,
+            'breadcrumbs' => $breadcrumbs
+        ])->with('title', 'Jam Kerja Pegawai');
+    }
+
+    public function employeesList(Request $request)
+    {
+        $sidebarItems = $this->getSidebarItems();
+        $breadcrumbs = $this->getBreadcrumbs($request);
+
+        return view('dashboard.emploeyees', [
+            'sidebarItems' => $sidebarItems,
+            'breadcrumbs' => $breadcrumbs
+        ])->with('title', 'Data Pegawai');
+    }
+}
